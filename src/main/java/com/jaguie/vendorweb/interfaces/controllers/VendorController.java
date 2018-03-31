@@ -25,7 +25,9 @@ public class VendorController {
         Vendor vendorSaved = vendorService.saveVendor(vendor);
         String msg = "Vendor saved with the id:" + vendorSaved.getId();
         modelMap.addAttribute("msg", msg);
-        return "createVendor";
+        List<Vendor> allVendors = vendorService.getAllVendors();
+        modelMap.addAttribute("vendors", allVendors);
+        return "displayVendors";
     }
 
     @RequestMapping(value = { "/displayVendors" })
@@ -39,6 +41,23 @@ public class VendorController {
     public String deleteVendor(@RequestParam("id") Long id, ModelMap modelMap){
         Vendor vendor = vendorService.getVendorById(id);
         vendorService.deleteVendor(vendor);
+        List<Vendor> allVendors = vendorService.getAllVendors();
+        modelMap.addAttribute("vendors", allVendors);
+        return "displayVendors";
+    }
+
+    @RequestMapping(value = "/editVendor")
+    public String showUpdateVendor(@RequestParam("id") Long id, ModelMap modelMap){
+        Vendor vendor = vendorService.getVendorById(id);
+        modelMap.addAttribute("vendor", vendor);
+        return "editVendor";
+    }
+
+    @RequestMapping("/updateVendor")
+    public String updateCustomer(@ModelAttribute("vendor")Vendor vendor, ModelMap modelMap){
+        Vendor vendorSaved = vendorService.saveVendor(vendor);
+        String msg = "Vendor updated with the id:" + vendorSaved.getId();
+        modelMap.addAttribute("msg", msg);
         List<Vendor> allVendors = vendorService.getAllVendors();
         modelMap.addAttribute("vendors", allVendors);
         return "displayVendors";

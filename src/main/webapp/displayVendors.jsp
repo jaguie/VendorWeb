@@ -28,9 +28,12 @@
             <td>${vendor.phone}</td>
             <td>${vendor.address}</td>
             <td><a href='deleteVendor?id=<c:out value="${vendor.id}"/>'>delete</a></td>
+            <td><a href='editVendor?id=<c:out value="${vendor.id}"/>'>edit</a></td>
         </tr>
     </c:forEach>
 </table>
+<pre>${msg}</pre>
+<br/>
 <a href="createVendor">Create New Vendor</a>
 </body>
 </html>
