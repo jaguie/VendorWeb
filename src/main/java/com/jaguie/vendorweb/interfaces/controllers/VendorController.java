@@ -12,4 +12,9 @@ public class VendorController {
         return "createVendor";
     }
 
+    @RequestMapping(value = { "/allVendor" }, method = RequestMethod.GET)
+    public String showAllVendor() {
+        return "createVendor";
+    }
+
 }
