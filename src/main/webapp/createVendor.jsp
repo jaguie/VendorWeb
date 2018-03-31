@@ -2,7 +2,7 @@
 <html lang="en">
 <body>
 	    <pre>
-            <form action="" method="">
+            <form action="saveVendor" method="POST">
             id: <input type="text" name="id"/>
             code: <input type="text" name="code"/>
             name: <input type="text" name="name"/>
@@ -10,10 +10,12 @@
                   Contract: <input type="radio" name="type" value="CONTRACT"/>
             email: <input type="text" name="email"/>
             phone: <input type="text" name="phone"/>
-            adress: <input type="text" name="adress"/>
+            address: <input type="text" name="address"/>
             <input type="submit" value="save"/>
             </form>
         </pre>
+${msg}
 
+<a href="displayVendors">View All</a>
 </body>
 </html>

@@ -14,7 +14,7 @@ public class Vendor {
     private String type;
     private String email;
     private String phone;
-    private String adress;
+    private String address;
 
     public Long getId() {
         return id;
@@ -64,12 +64,12 @@ public class Vendor {
         this.phone = phone;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -81,7 +81,7 @@ public class Vendor {
                 ", type='" + type + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", adress='" + adress + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

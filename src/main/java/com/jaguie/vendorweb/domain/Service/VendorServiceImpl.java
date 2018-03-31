@@ -35,7 +35,7 @@ public class VendorServiceImpl implements VendorService {
     }
 
     @Override
-    public List<Vendor> getAllLocation() {
+    public List<Vendor> getAllVendors() {
         return vendorRepository.findAll();
     }
 
